@@ -36,11 +36,11 @@ path = os.getcwd()
 
 
 #loading in the model and the pipeline files to predict on the data for the second model
-pickle_in4 = open(path+'/Pipeline/model2_xgb.pkl', 'rb')
+pickle_in4 = open(path+'/pipeline/model2_xgb.pkl', 'rb')
 model2 = pickle.load(pickle_in4)
 classes2 = model2.classes_
 
-pickle_in5 = open('Pipeline/pipeline2.pkl', 'rb')
+pickle_in5 = open('pipeline/pipeline2.pkl', 'rb')
 pipeline2 = pickle.load(pickle_in5)
 
 pickle_in6 = open('Pipeline/model_goals_xgb.pkl', 'rb')
