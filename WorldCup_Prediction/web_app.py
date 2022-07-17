@@ -36,19 +36,19 @@ path = os.getcwd()
 
 
 #loading in the model and the pipeline files to predict on the data for the second model
-pickle_in4 = open(path+'/pipeline/model2_xgb.pkl', 'rb')
+pickle_in4 = open('model2_xgb.pkl', 'rb')
 model2 = pickle.load(pickle_in4)
 classes2 = model2.classes_
 
-pickle_in5 = open('pipeline/pipeline2.pkl', 'rb')
+pickle_in5 = open('pipeline2.pkl', 'rb')
 pipeline2 = pickle.load(pickle_in5)
 
-pickle_in6 = open('Pipeline/model_goals_xgb.pkl', 'rb')
+pickle_in6 = open('model_goals_xgb.pkl', 'rb')
 model3 = pickle.load(pickle_in6)
 classes3 = model3.classes_
 
-xgb_preds = loadtxt('Data/xgb_preds.csv', delimiter=',')
-ytest = loadtxt('Data/xgb_ytest.csv', delimiter=',')
+xgb_preds = loadtxt('xgb_preds.csv', delimiter=',')
+ytest = loadtxt('xgb_ytest.csv', delimiter=',')
 
 
 #create choose list for second model including the teams names from the trained data
@@ -66,8 +66,8 @@ team2_list2 = team1_list2.copy()
 
 #read the meta data for both home and away teams to assign the data
 #based on the choosen team for the second model
-df_home = pd.read_csv('Data/df_home_all2.csv',index_col=0)
-df_away = pd.read_csv('Data/df_away_all2.csv',index_col=0)
+df_home = pd.read_csv('df_home_all2.csv',index_col=0)
+df_away = pd.read_csv('df_away_all2.csv',index_col=0)
                 
 def welcome():
 	return 'welcome all'
