@@ -21,6 +21,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import recall_score, precision_score , accuracy_score ,f1_score
 from Utilities.func import* 
+import os
 
 class DataFrameSelector(BaseEstimator,TransformerMixin):
     def __init__(self,attribute_names):
@@ -30,10 +31,12 @@ class DataFrameSelector(BaseEstimator,TransformerMixin):
     def transform(self,X):
         return X[self.attribute_names]
 
+path = os.getcwd()
+
 
 
 #loading in the model and the pipeline files to predict on the data for the second model
-pickle_in4 = open('Pipeline/model2_xgb.pkl', 'rb')
+pickle_in4 = open(path+'/Pipeline/model2_xgb.pkl', 'rb')
 model2 = pickle.load(pickle_in4)
 classes2 = model2.classes_
 
